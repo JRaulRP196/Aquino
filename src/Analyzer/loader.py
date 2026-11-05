@@ -5,13 +5,6 @@ from Analyzer.types_detector import detectar_tipos_datos
 from Analyzer.stats import estadisticas_descriptivas
 
 
-
-def detectarCodificacion(ruta):
-    if(not ruta.exists()):
-        print("Ruta no existe")
-        return
-    return chardet.detect(ruta.read_bytes())["encoding"]
-
 def leerArchivo(ruta):
     tipo = ruta.suffix
 
@@ -22,6 +15,12 @@ def leerArchivo(ruta):
             print(leerCSV(ruta).head())
         case _:
             print("Tipo de archivo desconocido")
+
+def detectarCodificacion(ruta):
+    if(not ruta.exists()):
+        print("Ruta no existe")
+        return
+    return chardet.detect(ruta.read_bytes())["encoding"]
 
 
 def leerCSV(path):
