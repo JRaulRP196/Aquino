@@ -1,0 +1,27 @@
+# requirements.txt
+
+# Datos
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1        # leer .xlsx
+xlrd>=2.0            # leer .xls antiguos 
+chardet>=5.0
+
+# Estadística y ML
+scipy>=1.10
+scikit-learn>=1.3
+statsmodels>=0.14    # ANOVA, pruebas estadísticas 
+
+# Visualización
+plotly>=5.18
+kaleido>=0.2.1       # exportar gráficos de Plotly a imagen (para PDF)
+
+# Interfaz
+streamlit>=1.30
+
+# Reporte
+jinja2>=3.1          # plantilla HTML del reporte
+weasyprint>=60       # HTML a PDF 
+
+# Pruebas
+pytest>=7.4

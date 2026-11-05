@@ -1,0 +1,41 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos (descomenta si no quieres versionarlos)
+# *.csv
+# *.xlsx
+# *.xls
+
+# Archivos temporales de Excel
+~$*.xlsx
+~$*.xls
+
+# Variables de entorno / secretos
+.env
+.env.*
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
