@@ -5,7 +5,7 @@ from Analyzer.loader import leerArchivo
 
 while True:
     menu = """
-    ---- OPCIONES ----
+    ---- OPCIONES ----REcuer
     1. Análizar Archivo
     2. Salir
     DIGITA UNA OPCIÓN VÁLIDA: """
