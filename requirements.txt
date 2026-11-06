@@ -14,6 +14,8 @@ statsmodels>=0.14    # ANOVA, pruebas estadísticas
 
 # Visualización
 plotly>=5.18
+matplotlib>=3.7
+seaborn>=0.13
 kaleido>=0.2.1       # exportar gráficos de Plotly a imagen (para PDF)
 
 # Interfaz

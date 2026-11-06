@@ -1,8 +1,5 @@
 import pandas as pd
 import chardet
-from Analyzer.cleaner import limpieza_general
-from Analyzer.types_detector import detectar_tipos_datos
-from Analyzer.stats import estadisticas_descriptivas
 
 
 def leerArchivo(ruta):
@@ -10,11 +7,13 @@ def leerArchivo(ruta):
 
     match tipo:
         case ".xlsx":
-            print(leerExcel(ruta).head())
+            return leerExcel(ruta)
         case ".csv":
-            print(leerCSV(ruta).head())
+            return leerCSV(ruta)
         case _:
             print("Tipo de archivo desconocido")
+
+
 
 def detectarCodificacion(ruta):
     if(not ruta.exists()):
@@ -27,15 +26,11 @@ def leerCSV(path):
     # sep=None + engine="python" detecta el separador (coma, ;, tab...)
     df = pd.read_csv(path, encoding=detectarCodificacion(path),
                      sep=None, engine="python")
-    df = limpieza_general(df)
-    detectar_tipos_datos(df)
-    estadisticas_descriptivas(df)
     return df
+
 
 def leerExcel(path):
     hojas = pd.read_excel(path, sheet_name=None)
     df = pd.concat(hojas.values(), ignore_index=True)
-    df = limpieza_general(df)
-    detectar_tipos_datos(df)
-    estadisticas_descriptivas(df)
     return df
+
