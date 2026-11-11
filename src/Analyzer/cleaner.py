@@ -43,14 +43,17 @@ def convertir_categoricas(df, cant_categorias_maximas):
     columnas_str = columnas_textuales(df)
     le = LabelEncoder()
     codificadas = []
+    mapeos = {}
     for columna in columnas_str:
         if(df[columna].nunique() <= cant_categorias_maximas):
             df[columna] = df[columna].astype("category")
             df[columna] = le.fit_transform(df[columna])
+            mapeos[columna] = dict(enumerate(le.classes_))
             codificadas.append(columna)
     # Los códigos 0,1,2... son etiquetas arbitrarias, no una escala: se
     # registran para no tratarlas como numéricas en correlaciones de Pearson
     df.attrs["categoricas"] = codificadas
+    df.attrs["mapeos"] = mapeos
     return df
 
 def estandarizacion(df):
